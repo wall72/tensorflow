@@ -35,7 +35,7 @@ RUN pip3 --no-cache-dir install \
 ENV TENSORFLOW_VERSION 0.10.0rc0
 
 # Install TensorFlow CPU version from central repo
-RUN pip --no-cache-dir install \
+RUN pip3 --no-cache-dir install \
     http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-${TENSORFLOW_VERSION}-cp34-cp34m-linux_x86_64.whl
 # --- ~ DO NOT EDIT OR DELETE BETWEEN THE LINES --- #
 
