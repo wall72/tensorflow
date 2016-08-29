@@ -51,6 +51,10 @@ COPY notebooks /notebooks
 COPY run_jupyter.sh /
 RUN chmod +x /run_jupyter.sh
 
+# TensorBoard script.
+COPY run_tensorboard.sh /
+RUN chmod +x /run_tensorboard.sh
+
 # TensorBoard
 EXPOSE 6006
 # IPython
