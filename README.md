@@ -6,7 +6,7 @@
 + TensorFlow : 0.12.0rc1
 
 ## Running Container
-+ docker run --name tensorflow -it -p 8888:8888 wall72/tensorflow
++ docker run --name tensorflow -it -p 8888:8888 -e PASSWORD=somepassword wall72/tensorflow
 + Go to your browser on http://localhost:8888/
 
 ## Reference

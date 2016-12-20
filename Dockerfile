@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-numpy \
         python3-scipy \
         python3-matplotlib \
+        python3-tk \
         rsync \
         software-properties-common \
         unzip \
