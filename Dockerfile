@@ -12,10 +12,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         pkg-config \
         python3 \
         python3-dev \
-        python3-numpy \
         python3-pip \
+        python3-numpy \
         python3-scipy \
+        python3-matplotlib \
         rsync \
+        software-properties-common \
         unzip \
         && \
     apt-get clean && \
@@ -28,16 +30,16 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 RUN pip3 --no-cache-dir install \
         ipykernel \
         jupyter \
-        matplotlib \
+        sklearn \
+        Pillow \
+        pandas \
+        seaborn \
         && \
     python3 -m ipykernel.kernelspec
 
-ENV TENSORFLOW_VERSION 0.10.0rc0
-
 # Install TensorFlow CPU version from central repo
 RUN pip3 --no-cache-dir install \
-    http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-${TENSORFLOW_VERSION}-cp34-cp34m-linux_x86_64.whl
-# --- ~ DO NOT EDIT OR DELETE BETWEEN THE LINES --- #
+    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.0rc1-cp34-cp34m-linux_x86_64.whl
 
 # Set up our notebook config.
 COPY jupyter_notebook_config.py /root/.jupyter/
@@ -50,10 +52,6 @@ COPY notebooks /notebooks
 # We just add a little wrapper script.
 COPY run_jupyter.sh /
 RUN chmod +x /run_jupyter.sh
-
-# TensorBoard script.
-COPY run_tensorboard.sh /
-RUN chmod +x /run_tensorboard.sh
 
 # TensorBoard
 EXPOSE 6006

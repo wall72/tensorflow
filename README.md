@@ -3,11 +3,11 @@
 
 ## Current Info.
 + Python : 3.43
-+ TensorFlow : 0.10.0rc0
++ TensorFlow : 0.12.0rc1
 
 ## Running Container
-+ docker run --name tensorflow -it -p 8888:8888 -p 6006:6006 wall72/tensorflow
-+ Run TensorBoard : #> run_tensorboard.sh
++ docker run --name tensorflow -it -p 8888:8888 wall72/tensorflow
++ Go to your browser on http://localhost:8888/
 
 ## Reference
 + https://github.com/tensorflow/tensorflow
